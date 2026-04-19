@@ -1,7 +1,7 @@
 package com.jaydeep.lc75.arrays_hashing;
 
 public class Solution1079 {
-    class Solution {
+    class Solution1 {
         public String gcdOfStrings(String str1, String str2) {
             // Get the GCD of two Strings
             int gcdVal = gcd(str1.length(), str2.length());
@@ -26,5 +26,21 @@ public class Solution1079 {
             }
             return true;
         }
+    }
+
+    class Solution2 {
+        public String gcdOfStrings(String str1, String str2) {
+            int gcdVal = gcd(str1.length(), str2.length());
+            String result = str1.substring(0, gcdVal);
+            if ((str1 + str2).equals(str2 + str1))
+                return result;
+            return "";
+
+        }
+
+        private int gcd(int a, int b) {
+            return b == 0 ? a : gcd(b, a % b);
+        }
+
     }
 }
